@@ -1,0 +1,131 @@
+﻿
+
+<html ng-app="MyApp">
+
+<head>
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/app/VacancyController.js"></script>
+    <script src="http://lorenzofox3.github.io/smart-table-website/bower_components/angular-smart-table/dist/smart-table.js"></script>
+    
+    <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+</head>
+
+<body ng-controller="BodyController">
+
+    <div ng-controller="safeCtrl">
+        <button class="btn btn-success" ng-click="GetData()">Click Me</button>
+        This is data from the back-end:
+        <div ng-repeat="row in displayedCollection track by $index">
+            {{row.title}}
+            {{row.company}}
+        </div>
+
+    </div>
+
+    <div ng-controller="safeCtrl">
+
+        <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+
+            <thead>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+            <tr>
+                <th st-sort="title">title</th>
+                <th st-sort="company">company</th>
+                <th st-sort="city">city</th>
+                <th st-sort="state">state</th>
+                <th st-sort="salary">salary</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="row in displayedCollection track by $index">
+                    <td>{{row.title}}</td>
+                    <td>{{row.company}}</td>
+                    <td>{{row.city}}</td>
+                    <td>{{row.state}}</td>
+                    <td>{{row.salary}}</td>
+
+                    <td>
+                        <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                            <i class="glyphicon glyphicon-remove-circle">
+                            </i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>
+
+
+@*@if (@User.Identity.IsAuthenticated)
+          {><p class="error" data-bind="text: error"></p>
+        <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+        <button data-bind="click: addTodoList">Add Todo list</button>
+
+        <section id="lists" data-bind="foreach: todoLists, visible: todoLists().length > 0">
+            <article class="todoList">
+                <header>
+                    <form data-bind="validate: true">
+                        <input class="required" data-bind="value: title, selected: isEditingListTitle, blurOnEnter: true" />
+                    </form>
+                </header>
+
+                <a href="#" class="deletelist" data-bind="click: $parent.deleteTodoList">X</a>
+
+                <ul data-bind="foreach: todos">
+                    <li>
+                        <input type="checkbox" data-bind="checked: isDone" />
+                        <input class="todoItemInput" type="text" data-bind="value: title, disable: isDone, blurOnEnter: true" />
+                        <a href="#" data-bind="click: $parent.deleteTodo">X</a>
+                        <p class="error" data-bind="visible: errorMessage, text: errorMessage"></p>
+                    </li>
+                </ul>
+
+                <form data-bind="submit: addTodo">
+                    <input class="addTodo" type="text" data-bind="value: newTodoTitle, placeholder: 'Type here to add', blurOnEnter: true, event: { blur: addTodo }" />
+                </form>
+
+                <p class="error" data-bind="visible: errorMessage, text: errorMessage"></p>
+            </article>
+        </section>
+    }
+    else
+    {
+        <div class="todoList" id="loginPanel">
+            <section id="localLoginPanel">
+                <h2>Log in</h2>
+                @Html.Partial("_Login")
+            </section>
+            <section id="socialLoginPanel">
+                <h2>Log in using another service</h2>
+                @Html.Action("ExternalLoginsList", "Account", new { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+            <p>First time here? <a id="showRegister">Sign up</a></p>
+        </div>
+        <div class="todoList" id="registerPanel">
+            <h2>Sign up</h2>
+            @Html.Partial("_Register")
+            <p>Already signed up? <a id="showLogin">Log in</a></p>
+        </div>*@
+    
+</div>
+
+@*@if (@User.Identity.IsAuthenticated)
+    {
+        @section scripts {
+            @Scripts.Render("~/bundles/knockout")
+            @Scripts.Render("~/bundles/jqueryval")
+            @Scripts.Render("~/bundles/todo")
+        }
+    }*@

@@ -1,0 +1,8 @@
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\bin\Debug\WindowsService1.exe
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\bin\Debug\WindowsService1.pdb
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\obj\Debug\WindowsService1.exe
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\obj\Debug\WindowsService1.pdb
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\bin\Debug\WindowsService1.exe.config
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bart\documents\visual studio 2013\Projects\RecruitementWebsite\WindowsService1\obj\Debug\CatsOneService.csprojResolveAssemblyReference.cache
