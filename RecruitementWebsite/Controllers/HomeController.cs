@@ -21,16 +21,19 @@ namespace RecruitementWebsite.Controllers
             return View();
         }
 
-        public List<VacancyModel> GetVacancyList()
+        public JsonResult GetVacancyList()
         {
             VacancyService.DummyData();
             List<VacancyModel> vacancyModelList = VacancyService.VacancyListModels;
 
-            return vacancyModelList;
-            ////var jsonSerialiser = new JavaScriptSerializer();
-            ////var json = jsonSerialiser.Serialize(vacancyModelList);
+            var viewModel = vacancyModelList.Select(x => new
+            {
+                Company = x.Company, 
+                Salary = x.Salary,
+                Title = x.Title
+            });
 
-            ////return json;
+            return Json(viewModel.ToArray(), JsonRequestBehavior.AllowGet);
         }
     }
 }
