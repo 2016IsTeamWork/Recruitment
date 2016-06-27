@@ -1,7 +1,6 @@
 ﻿
-var app = angular.module('MyApp', ['smart-table', 'ui.bootstrap'])
-{
-}
+var app = angular.module('MyApp');
+
 
 app.controller('BodyController', function ($scope, $http, $timeout) {
     $scope.rowCollection = [];

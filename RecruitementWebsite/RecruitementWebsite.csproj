@@ -340,7 +340,10 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\app\VacancyController.js" />
+    <Content Include="Scripts\app\3DCarousel.js" />
+    <Content Include="Scripts\app\Main\RecruitmentAppModule.js" />
+    <Content Include="Scripts\app\Main\RecruitmentAppRouting.js" />
+    <Content Include="Scripts\app\Controllers\VacancyController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1114,6 +1117,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\app\HTMLPages\about.html" />
+    <Content Include="Scripts\app\HTMLPages\contact.html" />
+    <Content Include="Scripts\app\HTMLPages\home.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1125,11 +1131,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\TodoList.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\app\ajaxlogin.js" />
-    <Content Include="Scripts\app\todo.viewmodel.js" />
-    <Content Include="Scripts\app\todo.bindings.js" />
-    <Content Include="Scripts\app\todo.datacontext.js" />
-    <Content Include="Scripts\app\todo.model.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -1159,6 +1160,7 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\Home\_Register.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\3DCarousel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

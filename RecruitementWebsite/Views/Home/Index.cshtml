@@ -5,18 +5,54 @@
 <head>
 
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
-    <script src="~/Scripts/app/VacancyController.js"></script>
+
+    <script src="~/Scripts/app/Main/RecruitmentAppModule.js"></script>
+    <script src="~/Scripts/app/Main/RecruitmentAppRouting.js"></script>
+    
+    <script src="~/Scripts/app/Controllers/VacancyController.js"></script>
+
     <script src="http://lorenzofox3.github.io/smart-table-website/bower_components/angular-smart-table/dist/smart-table.js"></script>
     
     <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 
 </head>
 
-<body ng-controller="BodyController" ng-style="{'background-image':'url(' + wallpaper.img + ')'}">
+<body>
+
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#/about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#/contact"><i class="fa fa-comment"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <a href="#/about"><i class="fa fa-shield"></i> About</a>
+    <a href="#/contact"><i class="fa fa-comment"></i> Contact</a>
+
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+    </div>
+
+</body>
+@*<body ng-controller="BodyController" ng-style="{'background-image':'url(' + wallpaper.img + ')'}">
 
     <div ng-controller="safeCtrl">
         <button class="btn btn-success" ng-click="GetData()">Click Me</button>
@@ -47,6 +83,7 @@
                     <td>{{row.Title}}</td>
                     <td>{{row.Company}}</td>
                     <td>{{row.Salary}}</td>
+                    <td></td>
                     <td>
                         <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
                             <i class="glyphicon glyphicon-remove-circle">
@@ -59,7 +96,7 @@
 
     </div>
 
-</body>
+</body>*@
 
 </html>
 

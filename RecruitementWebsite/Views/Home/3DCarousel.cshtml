@@ -1,0 +1,40 @@
+﻿
+
+<html ng-app="MyApp">
+
+<head>
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/app/VacancyController.js"></script>
+    <script src="http://lorenzofox3.github.io/smart-table-website/bower_components/angular-smart-table/dist/smart-table.js"></script>
+    
+    <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+    <link href="angular-carousel-3d.css" rel="stylesheet" type="text/css" />
+    <script src="angular.js"></script>
+    <script src="angular-swipe.js"></script>
+    <script src="angular-carousel-3d.js"></script>
+
+</head>
+
+<body ng-controller="BodyController">
+
+    <div carousel3d ng-model="arrayOfObjects">
+        <div carousel3d-slide ng-repeat="slide in app.slides track by $index">
+            <figure>
+                <img ng-src="{{slide.src}}" alt="" />
+                <figcaption ng-bind="slide.caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+  
+
+</body>
+
+</html>
+
+
