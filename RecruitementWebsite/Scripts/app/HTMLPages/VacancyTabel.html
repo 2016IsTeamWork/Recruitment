@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+
+<body ng-controller="BodyController">
+
+        <div ng-controller="safeCtrl">
+            <button class="btn btn-success" ng-click="GetData()">Click Me</button>
+            This is data from the back-end:
+            <div ng-repeat="row in displayedCollection track by $index">
+                {{row.Title}}
+                {{row.Company}}
+                {{row.Salary}}
+            </div>
+
+        </div>
+
+        <div ng-controller="safeCtrl">
+
+            <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+
+                <thead>
+                <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+                <tr>
+                    <th st-sort="Title">Title: </th>
+                    <th st-sort="Company">Company: </th>
+                    <th st-sort="Salary">City: </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="row in displayedCollection track by $index">
+                        <td>{{row.Title}}</td>
+                        <td>{{row.Company}}</td>
+                        <td>{{row.Salary}}</td>
+                        <td></td>
+                        <td>
+                            <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                                <i class="glyphicon glyphicon-remove-circle">
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+</body>
+</html>
