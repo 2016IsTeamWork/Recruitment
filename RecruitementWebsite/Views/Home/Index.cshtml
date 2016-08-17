@@ -1,48 +1,50 @@
-﻿
-
-<html ng-app="MyApp">
+﻿<html ng-app="MyApp">
 
 <head>
 
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+
+    <script src="~/Scripts/angular-touch.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
 
     <script src="~/Scripts/app/Main/RecruitmentAppModule.js"></script>
     <script src="~/Scripts/app/Main/RecruitmentAppRouting.js"></script>
-    
-    @*<script src="~/Scripts/app/Controllers/WallpaperController.js"></script>*@
 
     <script src="http://lorenzofox3.github.io/smart-table-website/bower_components/angular-smart-table/dist/smart-table.js"></script>
-    
+
     <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link href="~/Content/HeaderStyle.css" rel="stylesheet" />
 
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                    <a class="navbar-brand" href="/">Sentimus Recruitment</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#/about"><i class="fa fa-shield"></i> About</a></li>
-                    <li><a href="#/contact"><i class="fa fa-comment"></i> Contact</a></li>
+                    <li><a href="#/"><i class="fa fa-home"></i> Home </a></li>
+                    <li><a href="#/VacancyTabel"><i class="fa fa-shield"></i> Vacancies </a></li>
+                    @*<li><a href="#/contact"><i class="fa fa-comment"></i> Recruitment Proces </a></li>*@
+                    <li><a href="#/contact"><i class="fa fa-comment"></i> Contact </a></li>
+                    @*<li><a href="#/contact"><i class="fa fa-comment"></i> About us </a></li>*@
                 </ul>
             </div>
         </nav>
     </header>
 
-    <a href="#/about"><i class="fa fa-shield"></i> About</a>
+    @*<a href="#/about"><i class="fa fa-shield"></i> About</a>
     <a href="#/contact"><i class="fa fa-comment"></i> Contact</a>
-    <a href="#/VacancyTabel"><i class="fa fa-comment"></i> Vacancy Tabel </a>
+    <a href="#/VacancyTabel"><i class="fa fa-comment"></i>VacancyTabel</a>*@
+    <a href="#/VacancyTemplate"> VacancyTemplate </a>
 
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <div id="main">
@@ -108,7 +110,7 @@
             @Html.Partial("_Register")
             <p>Already signed up? <a id="showLogin">Log in</a></p>
         </div>*@
-    
+
 </div>
 
 @*@if (@User.Identity.IsAuthenticated)

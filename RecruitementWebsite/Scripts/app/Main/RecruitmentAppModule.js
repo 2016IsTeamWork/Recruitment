@@ -1,4 +1,3 @@
-﻿
-var app = angular.module('MyApp', ['smart-table', 'ui.bootstrap', 'ngRoute'])
+﻿var app = angular.module('MyApp', ['smart-table', 'ui.bootstrap', 'ngRoute', 'ngTouch', 'ngAnimate'])
 {
 }
