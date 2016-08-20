@@ -6,9 +6,8 @@
 
 <body ng-controller="BodyController">
 
-        <div ng-controller="safeCtrl">
-            <button class="btn btn-success" ng-click="GetData()">Click Me</button>
-            This is data from the back-end:
+        <!--<div ng-controller="safeCtrl">
+    
             <div ng-repeat="row in displayedCollection track by $index">
 
                 {{row.Title}}
@@ -17,35 +16,37 @@
 
             </div>
 
-        </div>
+        </div>-->
 
-        <div ng-controller="safeCtrl">
+    <div ng-controller="safeCtrl">
 
-            <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+        <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
 
-                <thead>
-                <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
-                <tr>
-                    <th st-sort="Title">Title: </th>
-                    <th st-sort="Company">Company: </th>
-                    <th st-sort="Salary">City: </th>
+            <thead>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
+            <tr>
+                <th st-sort="Title">Title: </th>
+                <th st-sort="Company">Company: </th>
+                <th st-sort="Salary">City: </th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="row in displayedCollection track by $index">
+
+                    <td>{{row.Title}}</td>
+                    <td>{{row.Company}}</td>
+                    <td>{{row.Salary}}</td>
+                    <td>
+                        <!--<a href="#/VacancyTemplate/{{row.ID}}"><i class="fa fa-comment"></i> Learn more! </a>-->
+
+                        <a href="http://jobs.sentimus.nl/index.php?m=portal&a=details&jobOrderID={{row.ID}}/>"><i class="fa fa-comment"></i> Learn more! </a>
+                    </td>
                 </tr>
-                </thead>
+            </tbody>
+        </table>
 
-                <tbody>
-                    <tr ng-repeat="row in displayedCollection track by $index">
-
-                        <td>{{row.Title}}</td>
-                        <td>{{row.Company}}</td>
-                        <td>{{row.Salary}}</td>
-                        <td>
-                            <a href="#/VacancyTemplate/{{row.ID}}"><i class="fa fa-comment"></i> Learn more! </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
+    </div>
 
 </body>
 </html>

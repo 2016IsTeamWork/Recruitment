@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\HeaderStyle.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -342,9 +343,12 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\3DCarousel.js" />
     <Content Include="Scripts\app\HTMLPages\VacancyTabel.html" />
+    <Content Include="Scripts\app\HTMLPages\VacancyTemplate.html" />
     <Content Include="Scripts\app\Main\RecruitmentAppModule.js" />
     <Content Include="Scripts\app\Main\RecruitmentAppRouting.js" />
     <Content Include="Scripts\app\Controllers\WallpaperController.js" />
+    <Content Include="Scripts\carousel-3d.css" />
+    <Content Include="Scripts\carousel-3d.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />

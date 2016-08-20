@@ -29,29 +29,17 @@ namespace RecruitementWebsite.Service
             for(int i=0; i<=20; ++i)
             {
                 VacancyModel model = new VacancyModel();
-                model.Company = "Sentimus Company" + i;
                 model.Title = "Sentimus Title" + i;
                 model.Salary = "1000" + i;
                 VacancyListModels.Add(model);
             }
         }
 
-        //public List<VacancyModel> GetVacancyList(string SearchString)
-        //{
-        //    string APIString = "https://api.catsone.com/api/get_joborders?save_user_values=1&subdomain=sentimus&transaction_code=fd20aba59b0968107547f1107ff78fd4&search=%22C%23%22&rows_per_page=50&page_number=0&sort=id%2C+title%2C+description%2C+is_hot%2C+company&sort_direction=&display_column=&list=&filter=";
-        //    return LoadListFromDB(APIString);
-        //}
-
-        public void LoadListFromDB(string ApiString)
+        public static void LoadListFromDB()
         {
-            RunASync(ApiString).Wait();
-           // return _vacancyListModels;
+            string APIString = " https://api.catsone.com/api/get_public_joborders?save_user_values=1&subdomain=sentimus&transaction_code=fd20aba59b0968107547f1107ff78fd4&keywords=&result=normal&max_results=50&offset=";
+            RunASync(APIString).Wait();
         }
-
-        //public List<VacancyModel> ReturnCurrentList()
-        //{
-        //    return VacancyListModels;
-        //}
 
         private static List<VacancyModel> CreateModels(IEnumerable xelements)
         {
@@ -59,73 +47,33 @@ namespace RecruitementWebsite.Service
             foreach (XElement e in xelements)
             {
                 VacancyModel vModel = new VacancyModel();
+                if (e.Element("id") != null)
+                {
+                    vModel.ID = e.Element("id").Value;
+                }
+                if (e.Element("summary") != null)
+                {
+                    vModel.Summary = e.Element("summary").Value;
+                }
                 if (e.Element("title") != null)
                 {
                     vModel.Title = e.Element("title").Value;
                 }
-                if (e.Element("company") != null)
+                if (e.Element("description") != null)
                 {
-                    vModel.Company = e.Element("company").Value;
-                }
-                if (e.Element("type") != null)
-                {
-                    vModel.Type = e.Element("type").Value;
-                }
-                if (e.Element("updated") != null)
-                {
-                    vModel.Updated = e.Element("updated").Value;
-                }
-                if (e.Element("created") != null)
-                {
-                    vModel.Created = e.Element("created").Value;
-                }
-                if (e.Element("recruiter") != null)
-                {
-                    vModel.Recruiter = e.Element("recruiter").Value;
-                }
-                if (e.Element("owner") != null)
-                {
-                    vModel.Owner = e.Element("owner").Value;
-                }
-                if (e.Element("company_job_id") != null)
-                {
-                    vModel.CompanyJobID = e.Element("company_job_id").Value;
-                }
-                if (e.Element("city") != null)
-                {
-                    vModel.City = e.Element("city").Value;
-                }
-                if (e.Element("state") != null)
-                {
-                    vModel.State = e.Element("state").Value;
-                }
-                if (e.Element("zip") != null)
-                {
-                    vModel.ZipCode = e.Element("zip").Value;
-                }
-                if (e.Element("location") != null)
-                {
-                    vModel.Location = e.Element("location").Value;
-                }
-                if (e.Element("country") != null)
-                {
-                    vModel.Country = e.Element("country").Value;
+                    vModel.Description = e.Element("description").Value;
                 }
                 if (e.Element("salary") != null)
                 {
                     vModel.Salary = e.Element("salary").Value;
                 }
-                if (e.Element("interviews") != null)
+                if (e.Element("city") != null)
                 {
-                    vModel.Interviews = e.Element("interviews").Value;
+                    vModel.City = e.Element("city").Value;
                 }
-                if (e.Element("status") != null)
+                if (e.Element("zip") != null)
                 {
-                    vModel.JobStatus = e.Element("status").Value;
-                }
-                if (e.Element("item_id") != null)
-                {
-                    vModel.ItemID = e.Element("item_id").Value;
+                    vModel.Zip = e.Element("zip").Value;
                 }
                 vacancyModels.Add(vModel);
             }

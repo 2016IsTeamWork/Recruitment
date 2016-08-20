@@ -23,14 +23,19 @@ namespace RecruitementWebsite.Controllers
 
         public JsonResult GetVacancyList()
         {
-            VacancyService.DummyData();
+           // VacancyService.DummyData();
+
             List<VacancyModel> vacancyModelList = VacancyService.VacancyListModels;
 
             var viewModel = vacancyModelList.Select(x => new
             {
-                Company = x.Company, 
+                ID = x.ID,
+                Summary = x.Summary,
+                Title = x.Title,
+                Description = x.Description,
                 Salary = x.Salary,
-                Title = x.Title
+                City = x.City,
+                Zip = x.Zip
             });
 
             return Json(viewModel.ToArray(), JsonRequestBehavior.AllowGet);
