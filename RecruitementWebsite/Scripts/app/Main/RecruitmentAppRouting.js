@@ -85,7 +85,7 @@ MyApp.factory('SharedVacancyDataService', function () {
 
 });
 
-MyApp.controller('safeCtrl', ['$scope', '$http', '$timeout', '$interval', function ($scope, $http, $timeout, $interval, SharedVacancyDataService) {
+MyApp.controller('safeCtrl', ['$scope', '$http', '$timeout', '$interval', function ($scope, $http, $timeout, $interval) {
 
     FillTable();
 
@@ -96,10 +96,8 @@ MyApp.controller('safeCtrl', ['$scope', '$http', '$timeout', '$interval', functi
             $http.get("/Home/GetVacancyList").then(function (result) {
 
                 angular.forEach(result.data, function (item, key) {
-                    console.log("DataKey: " + key + " DataValue: " + item);
-                    console.log("DataKey: " + key + "Company: " + item.Company);
 
-                    var row = { TableID: key, ID: item.ID, Title: item.Title, Company: item.Company, Salary: item.Salary }
+                    var row = { TableID: key, ID: item.ID, Title: item.Title, City: item.City, Salary: item.Salary, Description: item.Description}
 
                     collection.push(row);
                 });
@@ -108,7 +106,6 @@ MyApp.controller('safeCtrl', ['$scope', '$http', '$timeout', '$interval', functi
              
                 $scope.rowCollection = collection;
 
-                SharedVacancyDataService.set(collection);
             });
     }
 }]);

@@ -26,8 +26,9 @@
             <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text" /></th>
             <tr>
                 <th st-sort="Title">Title: </th>
-                <th st-sort="Company">Company: </th>
-                <th st-sort="Salary">City: </th>
+                <th st-sort="City">City: </th>
+                <th st-sort="Salary">Salary: </th>
+               
             </tr>
             </thead>
 
@@ -35,11 +36,10 @@
                 <tr ng-repeat="row in displayedCollection track by $index">
 
                     <td>{{row.Title}}</td>
-                    <td>{{row.Company}}</td>
+                    <td>{{row.City}}</td>
                     <td>{{row.Salary}}</td>
+                   
                     <td>
-                        <!--<a href="#/VacancyTemplate/{{row.ID}}"><i class="fa fa-comment"></i> Learn more! </a>-->
-
                         <a href="http://jobs.sentimus.nl/index.php?m=portal&a=details&jobOrderID={{row.ID}}/>"><i class="fa fa-comment"></i> Learn more! </a>
                     </td>
                 </tr>
