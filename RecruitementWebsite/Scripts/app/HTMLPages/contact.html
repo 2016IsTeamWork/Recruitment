@@ -7,10 +7,108 @@
 
     <!-- contact.html -->
     <div class="jumbotron text-center">
-        <h1>Contact Page</h1>
+        
+        <div class="interiorPage">
+            <h1> Contact </h1>
 
-        <p>{{ message }}</p>
+            <div class="contactContainer" data-ng-controller="contactController">
+
+                <form name="contactform" validation data-ng-submit="submit(contactform)"
+                      method="post"
+                      action=""
+                      role="form">
+
+                    <div data-ng-hide="formError()" data-ng-class="result">
+                        {{resultMessage}}
+                    </div>
+
+                    <!-- USER NAME -->
+                    <div class="row">
+
+                        <div>
+                            <input type="text" name="name" id="name" data-ng-model="contactData.name"
+                                   placeholder="Full Name" data-ng-minlengt="3" required />
+                        </div>
+
+
+                        <!-- USER MAIL -->
+                        <div class="row">
+
+                            <input type="text" name="email" id="email" data-ng-model="contactData.email"
+                                   placeholder="name@gmail.com" data-ng-minlengt="3" required />
+
+
+                        </div>
+
+                        <!-- USER MESSAGE -->
+                        <div class="row">
+
+                            <textarea data-ng-model="contactData.message" rows="4" id="inputMessage"
+                                      name="inputMessage" placeholder="I'm burdened with glorius purpose...'"></textarea>
+
+                        </div>
+
+                        <!-- SUBMIT -->
+                        <div class="row">
+                            <input type="button" class="btn btn-default"
+                                   data-ng-disabled="submitButtonDisabled"
+                                   data-ng-click="submit(contactform)"
+                                   value="Send" />
+
+                        </div>
+
+                </form>
+            </div>
+        </div>
+
+
     </div>
+
+    <style>
+        form{
+            margin: 20px 30px;
+        }
+
+        .contactContainer{
+            input[type="text"], 
+                textarea{
+                                            margin: 4px 8px;
+                                            border: 2px solid #000;
+                                            padding: 4px;
+                                            color: red;
+                        }
+            textarea{
+                width: 100%;
+            }
+
+            input[type="button"]{
+                margin: 12px 8px;
+                background: grey;
+                color: #333;
+                text-align:center;
+                border: none;
+                &:hover{
+                           background: #666;
+                           color: white;
+                       }
+            }
+            
+            .bg-danger, bg-succes{
+                margin: 0;
+                padding:12px;
+                background: red;
+                color:white;
+
+            }
+
+            .bg-succes{
+                background: lightblue;
+                color: #dadada;
+            }
+
+        }
+            
+    </style>
 
 </body>
 </html>

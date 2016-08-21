@@ -1,4 +1,6 @@
-﻿
+﻿/// <reference path="../Controllers/ContactController.js" />
+/// <reference path="../Controllers/ContactController.js" />
+
 var MyApp = angular.module('MyApp');
 
 // configure our routes
@@ -38,14 +40,53 @@ MyApp.config(function ($routeProvider, $locationProvider) {
              controller: 'safeCtrl'
          })
 
-
-     
-
         .otherwise({
             redirectTo: '/'
         });
  
 });
+
+MyApp.controller('contactController', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.result = 'hidden';
+    $scope.resultMessage = 'message';
+    $scope.contactData = '';
+    $scope.submitButtonDisabled = false;
+    $scope.submitted = false;
+    $scope.submit = function (contactform) {
+        console.log(contactform);
+        $scope.submitted = true;
+        $scope.submitButtonDisabled = true;
+
+        if (contactform.$valid) {
+            $http({
+                method: 'POST',
+                url: '',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            }).succes(function (data) {
+                if (data.succes) {
+                    $scope.submitButtonDisabled = true;
+                    $scope.resultMessage = data.message;
+                    $scope.result = 'bg-success';
+
+                }
+                else {
+                    $scope.submitButtonDisabled = false;
+                    $scope.resultMessage = data.message;
+                    $scope.result = 'bg-danger';
+
+                }
+            });
+        }
+        else {
+            $scope.submitButtonDisabled = false;
+            $scope.resultMessage = "Failed to submit";
+            $scope.result = 'bg-danger';
+        }
+        alert($scope.result);
+    }
+}]);
+
 
 // create the controller and inject Angular's $scope
 MyApp.controller('mainController', function ($scope) {
@@ -57,9 +98,6 @@ MyApp.controller('aboutController', function ($scope) {
     $scope.message = 'Look! I am an about page.';
 });
 
-MyApp.controller('contactController', function ($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-});
 
 MyApp.controller('VacancyTemplateController', function ($scope, $http, $routeParams) {
 
