@@ -342,11 +342,11 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\3DCarousel.js" />
+    <Content Include="Scripts\app\HTMLPages\Developer.html" />
+    <Content Include="Scripts\app\HTMLPages\Company.html" />
     <Content Include="Scripts\app\HTMLPages\VacancyTabel.html" />
-    <Content Include="Scripts\app\HTMLPages\VacancyTemplate.html" />
     <Content Include="Scripts\app\Main\RecruitmentAppModule.js" />
     <Content Include="Scripts\app\Main\RecruitmentAppRouting.js" />
-    <Content Include="Scripts\app\Controllers\WallpaperController.js" />
     <Content Include="Scripts\carousel-3d.css" />
     <Content Include="Scripts\carousel-3d.js" />
     <Content Include="Scripts\errors.json" />
@@ -1122,7 +1122,6 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\app\HTMLPages\about.html" />
     <Content Include="Scripts\app\HTMLPages\contact.html" />
     <Content Include="Scripts\app\HTMLPages\home.html" />
     <Content Include="Web.config" />
@@ -1170,6 +1169,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
+    <Folder Include="Scripts\app\Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

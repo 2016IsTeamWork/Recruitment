@@ -12,14 +12,8 @@ MyApp.config(function ($routeProvider, $locationProvider) {
             controller: 'mainController'
         })
 
-        // route for the about page
-        .when('/about', {
-            templateUrl: 'Scripts/app/HTMLPages/about.html',
-            controller: 'aboutController'
-        })
-
         // route for the contact page
-        .when('/contact', {
+        .when('/Contact', {
             templateUrl: 'Scripts/app/HTMLPages/contact.html',
             controller: 'contactController'
         })
@@ -29,15 +23,28 @@ MyApp.config(function ($routeProvider, $locationProvider) {
             controller: 'safeCtrl'
         })
 
-        .when('/VacancyTemplate/:id', {
-            templateUrl: 'Scripts/app/HTMLPages/VacancyTemplate.html',
-            controller: 'VacancyTemplateController'
-        })
+         .when('/Jobs', {
+             templateUrl: 'Scripts/app/HTMLPages/VacancyTabel.html',
+             controller: 'safeCtrl'
+         })
+
+         .when('/Company', {
+             templateUrl: 'Scripts/app/HTMLPages/Company.html',
+             controller: 'safeCtrl'
+         })
+
+         .when('/Developer', {
+             templateUrl: 'Scripts/app/HTMLPages/Developer.html',
+             controller: 'safeCtrl'
+         })
+
+
+     
 
         .otherwise({
             redirectTo: '/'
         });
-    //$locationProvider.html5Mode(true);
+ 
 });
 
 // create the controller and inject Angular's $scope
